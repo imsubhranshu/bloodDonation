@@ -14,7 +14,7 @@ if(isset($_GET["data"])) {
   
   if($data != "") {
 
-    $sql = "SELECT * FROM $table WHERE bgroup like '$data'";
+    $sql = "SELECT * FROM $table WHERE bgroup like '$data' or name like '$data' or city like '$data'";
 
   }
 
@@ -60,10 +60,12 @@ $result = mysqli_query($con, $sql);
   ?>
 
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Sorry!</strong> Currently No Donors available for this Blood Group.
+            <strong>Sorry!</strong> No record matches your search.
+            
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
             </button>
+            
           </div>
 
   <?php        
