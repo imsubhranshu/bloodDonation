@@ -1,3 +1,30 @@
+<?php
+  require("db.php"); 
+  session_start();
+?>
+
+<?php
+
+if(isset($_POST["user"])) {
+  
+  $user = $_POST["user"];
+  $password = $_POST["password"];
+  
+  $sql = "SELECT * FROM $table WHERE contact LIKE '$user' and password LIKE '$password'";
+  $result = mysqli_query($con, $sql);
+  
+  $tot = mysqli_num_rows($result);
+
+  if($tot>0) {
+    echo var_dump($result);
+  } else {
+    echo "Not Found";
+  }
+
+}
+
+?>
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -51,16 +78,18 @@
   <img class="mb-4" src="admin-svg.svg" alt="Admin" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">Contact Number</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <input type="text" name="user" id="inputEmail" class="form-control" placeholder="Contact Number" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <!-- <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
-  </div>
+  </div> -->
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+  <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y"); ?></p>
 </form>
 </body>
 </html>
+
+<?php require("dbClose.php"); ?>
