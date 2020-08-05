@@ -1,5 +1,5 @@
 <?php
-  require("db.php"); 
+  require("../db.php"); 
   session_start();
 ?>
 
@@ -16,7 +16,19 @@ if(isset($_POST["user"])) {
   $tot = mysqli_num_rows($result);
 
   if($tot>0) {
-    echo var_dump($result);
+    while($row = mysqli_fetch_assoc($result)) {
+      $_SESSION["id"] = $row["id"];
+      $_SESSION["name"] = $row["name"];
+      $_SESSION["address"] = $row["address"];
+      $_SESSION["city"] = $row["city"];
+      $_SESSION["state"] = $row["state"];
+      $_SESSION["bgroup"] = $row["bgroup"];
+      $_SESSION["contact"] = $row["contact"];
+      $_SESSION["password"] = $row["password"];
+      $_SESSION["pin"] = $row["pin"];
+
+      header("location: dashboard");
+    }
   } else {
     echo "Not Found";
   }
@@ -81,15 +93,15 @@ if(isset($_POST["user"])) {
   <input type="text" name="user" id="inputEmail" class="form-control" placeholder="Contact Number" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <!-- <div class="checkbox mb-3">
+  <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
-  </div> -->
+  </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y"); ?></p>
 </form>
 </body>
 </html>
 
-<?php require("dbClose.php"); ?>
+<?php require("../dbClose.php"); ?>
