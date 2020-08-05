@@ -12,7 +12,8 @@ $table = "donor";
 // Site Details
 $homepage = "/blooddonation/";
 
-
+//Name of the owner of the website
+$owner_name = "Subhransu sekhar Behera";
 
 
 

@@ -2,7 +2,7 @@
 
           <footer class="footer mt-auto py-3">
             <div class="container">
-              <span class="text-muted">&copy;Subhranshu Behera <?php echo date("Y") ?>. All Rights Reserved.</span>
+              <span class="text-muted">&copy;<?php echo $owner_name; ?> <?php echo date("Y") ?>. All Rights Reserved.</span>
             </div>
           </footer>
 
