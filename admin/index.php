@@ -38,8 +38,7 @@ if(isset($_POST["user"])) {
 ?>
 
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!doctype html>
 <html lang="en">
   <head>
@@ -53,17 +52,17 @@ if(isset($_POST["user"])) {
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
     <!-- Bootstrap core CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="manifest.json">
-<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
 
 
     <style>
@@ -86,22 +85,25 @@ if(isset($_POST["user"])) {
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin" action="" method="post">
-  <img class="mb-4" src="admin-svg.svg" alt="Admin" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Contact Number</label>
-  <input type="text" name="user" id="inputEmail" class="form-control" placeholder="Contact Number" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y"); ?></p>
-</form>
-</body>
+      <div class="container">
+        <form class="form-signin" action="" method="post">
+          <img class="mb-4" src="admin-svg.svg" alt="Admin" width="72" height="72">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="inputEmail" class="sr-only">Contact Number</label>
+          <input type="text" name="user" id="inputEmail" class="form-control" placeholder="Contact Number" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">&copy; <?php echo date("Y"); ?></p>
+        </form>
+      </div>
+  </body>
 </html>
 
 <?php require("../dbClose.php"); ?>
+

@@ -38,7 +38,7 @@
           <a class="dropdown-item" href="#">About</a>
           <a class="dropdown-item" href="#">Contact</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Update</a>
+          <a class="dropdown-item" href="admin">Update</a>
         </div>
       </li>
       <!-- <li class="nav-item">

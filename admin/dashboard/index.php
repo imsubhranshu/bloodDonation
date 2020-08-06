@@ -23,11 +23,13 @@
         // echo $contact;
         // echo $password;
 
-        $sql = "UPDATE $table set 'name' = '$name', 'address' = '$address', 'city' = '$city', 'state' = '$state', 'pin' = '$pin', 'bgroup' = '$bgroup', 'contact' = '$contact', 'password' = '$password'";
+        // UPDATE 'donor' SET 'password' = 'rajat@1234' WHERE 'donor'.'id' = 2;
 
-        // INSERT INTO $table(`name`, `address`, `city`, `state`, `pin`, `bgroup`, `contact`, `password`) VALUES ('$name', '$address', '$city', '$state', '$pin', '$bgroup', '$contact', '$password')
+        $sql = "UPDATE $table set name = '$name', address = '$address', city = '$city', state = '$state', pin = '$pin', bgroup = '$bgroup', contact = '$contact', password = '$password' WHERE 'id' = " . $_SESSION["id"];
 
-        echo $sql;
+        // INSERT INTO $table('name', 'address', 'city', 'state', 'pin', 'bgroup', 'contact', 'password') VALUES ('$name', '$address', '$city', '$state', '$pin', '$bgroup', '$contact', '$password')
+
+        // echo $sql;
 
         $result = mysqli_query($con, $sql);
 
@@ -47,6 +49,8 @@
   </head>
   <body>
   <div class="container">
+
+  
 <?php
         if($result) {
 ?>
@@ -60,6 +64,7 @@
                 Couldnot update now. Please try again
             </div>
 <?php
+            // echo var_dump($result);
         }
     }
 ?>

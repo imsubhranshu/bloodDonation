@@ -48,7 +48,7 @@ $result = mysqli_query($con, $sql);
   <tbody>
       <tr>
         <th scope="row"><?php echo $sl ?></th>
-        <td><?php echo $row["name"] ?></td>
+        <td><a href="details.php?ref=<?php echo $row["id"]; ?>"><?php echo $row["name"] ?></a></td>
         <td><?php echo $row["city"] ?>, <?php echo $row["state"] ?></td>
         <td><?php echo $row["bgroup"] ?></td>
         <td><a href="tel:+91<?php echo $row["contact"] ?>"><?php echo $row["contact"] ?></a></td>
