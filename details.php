@@ -6,7 +6,7 @@
     if(isset($_GET["ref"])) {
         $id = $_GET["ref"];
 
-        $query = "SELECT * FROM $table WHERE id = $id";
+        $query = "SELECT name, address, city, state, pin, bgroup, contact FROM $table WHERE id = $id";
 
         $res = mysqli_query($con, $query);
 

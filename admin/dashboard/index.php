@@ -24,8 +24,8 @@
         // echo $password;
 
         // UPDATE 'donor' SET 'password' = 'rajat@1234' WHERE 'donor'.'id' = 2;
-
-        $sql = "UPDATE $table set name = '$name', address = '$address', city = '$city', state = '$state', pin = '$pin', bgroup = '$bgroup', contact = '$contact', password = '$password' WHERE 'id' = " . $_SESSION["id"];
+$xyz=$_SESSION['id'];
+        $sql = "UPDATE $table set name = '$name', address = '$address', city = '$city', state = '$state', pin = '$pin', bgroup = '$bgroup', contact = '$contact', password = '$password' WHERE id = '$xyz'";
 
         // INSERT INTO $table('name', 'address', 'city', 'state', 'pin', 'bgroup', 'contact', 'password') VALUES ('$name', '$address', '$city', '$state', '$pin', '$bgroup', '$contact', '$password')
 
